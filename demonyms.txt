@@ -1,0 +1,26 @@
+This is a plan from https://github.com/ontologyportal/sumo/issues/61
+We create a couple of terms to simplify each demonym:
+
+(subclass NationalPerson GroupOfPeople)
+(instance DemonymFn UnaryFunction)
+(domain DemonymFn 1 GeographicArea)
+(rangeSubclass DemonymFn GroupOfPeople)
+(documentation DemonymFn EnglishLanguage "A &%GroupOfPeople defined by their &%birthplace or where the &%Residence they &%inhabit is &%located.")
+
+(=>
+(instance ?P (DemonymFn ?N))
+(or
+(exists (?R)
+(and
+  (located ?R ?N)
+   (inhabits ?P ?R)))
+(birthplace ?P ?N)))
+
+Then we  create the tedious file that starts as follows:
+(there are (vcvp believes) noun.person (8535) that have "a native or inhabitant of", 
+of which (4860) have no translation in Portuguese.  the task is not as small as gentilics)
+%--------------------
+
+(equal NewZealander (DemonymFn NewZealand))
+(equal NewYorker (DemonymFn NewYork))
+(equal Brazilian (DemonymFn Brazil)) 
