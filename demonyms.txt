@@ -24,3 +24,5 @@ of which (4860) have no translation in Portuguese.  the task is not as small as 
 (equal NewZealander (DemonymFn NewZealand))
 (equal NewYorker (DemonymFn NewYork))
 (equal Brazilian (DemonymFn Brazil)) 
+
+(equal  Frisian (DemonymFn Frisia)) 
