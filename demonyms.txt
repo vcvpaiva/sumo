@@ -21,19 +21,19 @@ Then we  create the tedious file that starts as follows:
 of which (3077) have no translation in Portuguese.  the task is not as small as gentilics)
 %--------------------
 
-(equal NewZealander (DemonymFn NewZealand))
-(equal NewYorker (DemonymFn NewYork))
+(equal NewZealander (DemonymFn New_Zealand))
+(equal NewYorker (DemonymFn New_York))
 (equal Brazilian (DemonymFn Brazil)) 
 
 (equal Frisian (DemonymFn Frisia)) 
 (equal Trinidadian (DemonymFn Trinidad))
-(equal Papuan (DemonymFn PapuaNewGuinea))
+(equal Papuan (DemonymFn Papua_New_Guinea))
 (equal Hindu (DemonymFn Hindustan))
 (equal Argive  (DemonymFn Argos))
-(equal EastGerman  (DemonymFn EastGermany))
+(equal EastGerman  (DemonymFn East_Germany))
 (equal Maltese  (DemonymFn Malta))
 (equal Castilian  (DemonymFn Castile))
-(equal Singhalese  (DemonymFn SriLanka))
+(equal Singhalese  (DemonymFn Sri_Lanka))
 (equal Carthaginian  (DemonymFn Carthage))
 (equal European  (DemonymFn Europe))
 (equal Malawian  (DemonymFn Malawi))
@@ -59,10 +59,10 @@ of which (3077) have no translation in Portuguese.  the task is not as small as 
 (equal Eritrean  (DemonymFn Eritrea))
 (equal North_American  (DemonymFn North_America))
 (equal Georgian  (DemonymFn Georgia))
-(equal Sierra_Leonean  (DemonymFn Sierra_Leon))
+(equal Sierra_Leonean  (DemonymFn Sierra_Leone))
 (equal Jamaican  (DemonymFn Jamaica))
-(equal Samoan  (DemonymFn SamoanIslands))
-(equal Salvadoran  (DemonymFn ElSalvador))
+(equal Samoan  (DemonymFn Samoa))
+(equal Salvadoran  (DemonymFn El_Salvador))
 (equal Portuguese  (DemonymFn Portugal))
 
 
