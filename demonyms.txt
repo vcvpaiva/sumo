@@ -17,12 +17,42 @@ We create a couple of terms to simplify each demonym:
 (birthplace ?P ?N)))
 
 Then we  create the tedious file that starts as follows:
-(there are (vcvp believes) noun.person (8535) that have "a native or inhabitant of", 
-of which (4860) have no translation in Portuguese.  the task is not as small as gentilics)
+(there are (vcvp believes) noun.person (5791) that have "a native or inhabitant of" and are noun.person, 
+of which (3077) have no translation in Portuguese.  the task is not as small as gentilics)
 %--------------------
 
 (equal NewZealander (DemonymFn NewZealand))
 (equal NewYorker (DemonymFn NewYork))
 (equal Brazilian (DemonymFn Brazil)) 
 
-(equal  Frisian (DemonymFn Frisia)) 
+(equal Frisian (DemonymFn Frisia)) 
+(equal Trinidadian (DemonymFn Trinidad))
+(equal Papuan (DemonymFn PapuaNewGuinea))
+(equal Hindu (DemonymFn Hindustan))
+(equal Argive  (DemonymFn Argos))
+(equal EastGerman  (DemonymFn EastGermany))
+(equal Maltese  (DemonymFn Malta))
+(equal Castilian  (DemonymFn Castile))
+(equal Singhalese  (DemonymFn SriLanka))
+(equal Carthaginian  (DemonymFn Carthage))
+
+(equal European  (DemonymFn Europe))
+(equal Malawian  (DemonymFn Malawi))
+(equal Dane  (DemonymFn Denmark))
+(equal Belorussian  (DemonymFn Byelorussia))
+(equal Macedonian  (DemonymFn Macedonia))
+(equal Armenian  (DemonymFn Armenia))
+(equal Siberian  (DemonymFn Siberia))
+(equal Zambian  (DemonymFn Zambia))
+(equal Maldivian  (DemonymFn Maldives))
+(equal Guinean  (DemonymFn Guinea))
+(equal Burundian  (DemonymFn Burundi))
+(equal Algerian  (DemonymFn Algeria))
+(equal Parthian  (DemonymFn Parthia))
+(equal Kenyan  (DemonymFn Kenya))
+(equal Cameroonian  (DemonymFn Cameroon))
+(equal Djiboutian  (DemonymFn Djibouti))
+(equal Kenyan  (DemonymFn Kenya))
+(equal Ethiopian  (DemonymFn Ethiopia))
+(equal Madagascan  (DemonymFn Madagascar))
+(equal Bruneian  (DemonymFn Brunei))
