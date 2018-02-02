@@ -56,5 +56,8 @@ of which (3077) have no translation in Portuguese.  the task is not as small as 
 (equal Ethiopian  (DemonymFn Ethiopia))
 (equal Madagascan  (DemonymFn Madagascar))
 (equal Bruneian  (DemonymFn Brunei))
-
-
+(equal Cambodian  (DemonymFn Cambodia))
+(equal Eritrean  (DemonymFn Eritrea))
+(equal North_American  (DemonymFn North_America))
+(equal Georgian  (DemonymFn Georgia))
+(equal Sierra_Leonean  (DemonymFn Sierra_Leon))
