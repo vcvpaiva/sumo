@@ -61,3 +61,13 @@ of which (3077) have no translation in Portuguese.  the task is not as small as 
 (equal North_American  (DemonymFn North_America))
 (equal Georgian  (DemonymFn Georgia))
 (equal Sierra_Leonean  (DemonymFn Sierra_Leon))
+(equal Jamaican  (DemonymFn Jamaica))
+(equal Samoan  (DemonymFn SamoanIslands))
+(equal Salvadoran  (DemonymFn ElSalvador))
+(equal Portuguese  (DemonymFn Portugal))
+
+
+
+
+
+
