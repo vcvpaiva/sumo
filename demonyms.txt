@@ -35,7 +35,6 @@ of which (3077) have no translation in Portuguese.  the task is not as small as 
 (equal Castilian  (DemonymFn Castile))
 (equal Singhalese  (DemonymFn SriLanka))
 (equal Carthaginian  (DemonymFn Carthage))
-
 (equal European  (DemonymFn Europe))
 (equal Malawian  (DemonymFn Malawi))
 (equal Dane  (DemonymFn Denmark))
