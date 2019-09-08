@@ -1,0 +1,511 @@
+============================================================================
+;;                  SmartThings Ontology
+;; ============================================================================
+;; Created by: Valeria de Paiva (vdepaiva [at] gmail [dot] com)
+;; 
+;; Created on: Sept 8, 2019
+;; ============================
+;; 
+;; Description:  This describes concepts related to smart devices, described in
+;; https://smartthings.developer.samsung.com/docs/devices/working-with-bixby.html.
+;; 
+;; Ontology dependencies for Biography.kif: 
+;; Merge.kif
+;; Mid-level-ontology.kif,  
+;; Media.kif
+;; Music.kif 
+
+;; We ask the people using or referencing this work cite our primary paper:
+;; Niles, I., and Pease, A.  2001.  Towards a Standard Upper Ontology.  In 
+;; Proceedings of the 2nd International Conference on Formal Ontology in 
+;; Information Systems (FOIS-2001), Chris Welty and Barry Smith, eds, 
+;; Ogunquit, Maine, October 17-19, 2001.  See also http://www.ontologyportal.org
+
+;; ================================
+;; Outline
+;; --------------------------------
+;; Devices
+;; Sensors
+;; Actions
+;; Capabilities
+;; Commands
+;; ================================
+;;---------------------------------------------------------------------
+;; Devices
+;;---------------------------------------------------------------------
+
+;; these are the smart devices mentioned as working with Bixby:
+;;  Air conditioner
+;;	Air Purifier
+;;	Washer
+;;	Robot vacuum cleaner
+;;	Speaker
+;;	TV
+;;	Door lock
+;;	Light
+;;	Motion sensor
+;;	Multi-functional sensor
+;;	Open and close sensor
+;;	Outlet
+;;	Switch & Dimmer
+;;	Thermostat
+;;	Valve
+;;	Vent
+
+
+;; air conditioner 
+;; see http://sigma.ontologyportal.org:8080/sigma/Browse.jsp?flang=SUO-KIF&lang=EnglishLanguage&kb=SUMO&term=AirConditioner
+;; (subclass AirConditioner ElectricDevice)
+;; (documentation AirConditioner EnglishLanguage "AirConditioner is a type of ElectricDevice that is designed 
+;; to provide comfort during hot or cold weather by keeping the air in an area a specific temperature")
+;; has purpose and is part of the hotel ontology
+;; (subclass AirConditioner ElectricDevice)
+
+;; (documentation ElectricDevice EnglishLanguage "A Device that uses Electricity as its primary power source.")
+;; (subclass ElectricDevice Device)
+
+(subclass smartDevice ElectronicDevice)
+(subclass smartDevice ElectricDevice)
+
+;;(subclass Accelerometer ElectricDevice) 	ComputerInput.kif 490-490 	Accelerometer is a subclass of electric device
+;;(subclass AirConditioner ElectricDevice) 	Mid-level-ontology.kif 23974-23974 	Air conditioner is a subclass of electric device
+;;(subclass Battery ElectricDevice) 	Mid-level-ontology.kif 3042-3042 	Battery is a subclass of electric device
+;;(subclass CapacitorElement ElectricDevice) 	engineering.kif 528-528 	Capacitor element is a subclass of electric device
+;;(subclass Charger ElectricDevice) 	Cars.kif 2396-2396 	Charger is a subclass of electric device
+;;(subclass Computer ElectricDevice) 	QoSontology.kif 25-25 	Computer is a subclass of electric device
+;;(subclass DevicePowerSupply ElectricDevice) 	ComputingBrands.kif 3360-3360 	Device power supply is a subclass of electric device
+;;(subclass ElectricCoffeeMaker ElectricDevice) 	Mid-level-ontology.kif 23451-23451 	Coffee maker is a subclass of electric device
+;;(subclass ElectricLightFixture ElectricDevice) 	Cars.kif 5047-5047 	ElectricLightFixture is a subclass of electric device
+;;(subclass ElectricMotor ElectricDevice) 	Mid-level-ontology.kif 2198-2198 	Electric motor is a subclass of electric device
+;;(subclass ElectricSpeakerDevice ElectricDevice) 	ComputerInput.kif 397-397 	ElectricSpeakerDevice is a subclass of electric device
+;;(subclass ElectricalCircuit ElectricDevice) 	engineering.kif 979-979 	Electrical circuit is a subclass of electric device
+;;(subclass ElectricalComponent ElectricDevice) 	engineering.kif 975-975 	Electrical component is a subclass of electric device
+;;(subclass ElectricalMotor ElectricDevice) 	engineering.kif 790-790 	Electrical motor is a subclass of electric device
+;;(subclass ElectrifiedRailwayCar ElectricDevice) 	Transportation.kif 2129-2129 	Electrified railway car is a subclass of electric device
+;;(subclass Electromagnet ElectricDevice) 	Cars.kif 3853-3853 	Electromagnet is a subclass of electric device
+;;(subclass FabricIron ElectricDevice) 	Mid-level-ontology.kif 23066-23066 	Iron is a subclass of electric device
+;;(subclass FaxMachine ElectricDevice) 	Mid-level-ontology.kif 3484-3484 	Fax machine is a subclass of electric device
+;;(subclass HairDryer ElectricDevice) 	Mid-level-ontology.kif 23271-23271 	Hair dryer is a subclass of electric device
+;;(subclass InductorElement ElectricDevice) 	engineering.kif 545-545 	Inductor element is a subclass of electric device
+;;(subclass Microphone ElectricDevice) 	Mid-level-ontology.kif 2215-2215 	Microphone is a subclass of electric device
+;;(subclass Microwave ElectricDevice) 	Mid-level-ontology.kif 23307-23307 	Microwave is a subclass of electric device
+;;(subclass Photocopier ElectricDevice) 	Mid-level-ontology.kif 24354-24354 	Photocopier is a subclass of electric device
+;;(subclass Radar ElectricDevice)
+;;(subclass ReceiverDevice ElectricDevice) 	Mid-level-ontology.kif 2221-2221 	Receiver device is a subclass of electric device
+;;(subclass Refrigerator ElectricDevice) 	Mid-level-ontology.kif 2804-2804 	Refrigerator is a subclass of electric device
+;;(subclass ResistorElement ElectricDevice) 	engineering.kif 828-828 	Resistor element is a subclass of electric device
+;;(subclass SecurityAlarm ElectricDevice) 	Mid-level-ontology.kif 3353-3353 	Security alarm is a subclass of electric device
+;;(subclass SolderingIron ElectricDevice) 	Mid-level-ontology.kif 5874-5874 	Soldering iron is a subclass of electric device
+;;(subclass Solenoid ElectricDevice) 	Cars.kif 3889-3889 	Solenoid is a subclass of electric device
+;;(subclass SpeakerDevice ElectricDevice) 	Mid-level-ontology.kif 24020-24020 	Speaker is a subclass of electric device
+;;(subclass Stator ElectricDevice) 	engineering.kif 784-784 	Stator is a subclass of electric device
+;;(subclass Telegraph ElectricDevice) 	Mid-level-ontology.kif 2231-2231 	Telegraph is a subclass of electric device
+;;(subclass Telephone ElectricDevice) 	Mid-level-ontology.kif 3435-3435 	Telephone is a subclass of electric device
+;;(subclass TelephonyDevice ElectricDevice) 	Mid-level-ontology.kif 22332-22332 	TelephonyDevice is a subclass of electric device
+;;(subclass TelevisionSet ElectricDevice) 	Communications.kif 398-398 	Television set is a subclass of electric device
+;;(subclass VideoCamera ElectricDevice) 	ComputerInput.kif 449-449 	VideoCamera is a subclass of electric device
+;;(subclass VideoDisplay ElectricDevice)
+
+;;Air Purifier needs to be added
+
+(subclass AirPurifier ElectricDevice)
+;; air purifier (Q1196206) wikidata
+(documentation AirConditioner EnglishLanguage 
+"AirPurifier is a type of ElectricDevice that is designed to  remove contaminants from the air in a room to improve indoor air quality.")
+
+;; smartDevice needs to be added
+(subclass smartDevice ElectricDevice)
+(documentation AirConditioner EnglishLanguage 
+"A smartDevice is a type of ElectronicDevice, generally connected to other devices or networks via different wireless protocols, 
+that can operate to some extent interactively and autonomously.") 
+
+;; many home appliances have smart analogues like smart speakers
+
+
+
+
+
+
+
+
+(instance Chemist Profession)
+(subAttribute Chemist Scientist)
+(documentation Chemist EnglishLanguage "A &%Scientist who specializes in &%Chemistry.")
+
+(=>
+  (attribute ?PERSON Chemist)
+  (hasExpertise ?PERSON Chemistry))
+
+(instance ComputerScientist Profession)
+(subAttribute ComputerScientist Scientist)
+(documentation ComputerScientist EnglishLanguage "A &%Scientist who specializes in &%ComputerScience.")
+
+(=>
+  (attribute ?PERSON ComputerScientist)
+  (hasExpertise ?PERSON ComputerScience)) 
+
+(instance Economist Profession)
+(subAttribute Economist Scientist)
+(documentation Economist EnglishLanguage "An expert in the science of &%Economics.")
+
+(=>
+(attribute ?PERSON Economist)
+(hasExpertise ?PERSON Economics)) 
+
+(instance Engineer Profession)
+(subAttribute Engineer Scientist)
+(documentation Engineer EnglishLanguage "A person who uses scientific knowledge to solve practical problems. A graduate from an &%Engineering school.")
+
+(=>
+  (attribute ?PERSON Engineer)
+  (hasExpertise ?PERSON Engineering)) 
+  
+(subAttribute AeronauticalEngineer Engineer)
+
+(instance AeronauticalEngineer SkilledOccupation)
+(documentation AeronauticalEngineer EnglishLanguage "an &%Engineer concerned with &%Designing and &%Making of &%Aircrafts")
+
+(=>
+  (attribute ?X AeronauticalEngineer)
+  (exists (?SKILL)
+    (and
+      (hasSkill ?SKILL ?X)
+      (forall (?P)
+        (=> 
+          (instance ?P ?SKILL)
+          (or
+            (exists (?CONS ?OBJ ?PT)
+              (and
+                (instance ?CONS Making)
+                (or
+                  (instance ?OBJ Aircraft)
+                  (and
+                    (instance ?OBJ ?PT)
+                    (typicalPart ?PT Aircraft)))
+                (result ?CONS ?OBJ)
+                (subProcess ?P ?CONS)))
+            (exists (?DESIGN ?PLAN ?OBJ ?PT)
+              (and
+                (instance ?DESIGN Designing)
+                (or
+                  (instance ?OBJ Aircraft)
+                  (and
+                    (instance ?OBJ ?PT)
+                    (typicalPart ?PT Aircraft)))
+                (result ?DESIGN ?PLAN)
+                (represents ?PLAN ?OBJ)
+                (subProcess ?P ?DESIGN)))))))))
+
+(instance Geographer Profession)
+(subAttribute Geographer Scientist)
+(documentation Geographer EnglishLanguage "An expert on &%Geography.")
+
+(=>
+  (attribute ?PERSON Geographer)
+  (hasExpertise ?PERSON Geography)) 
+
+(instance Geologist Profession)
+(subAttribute Geologist Scientist)
+(documentation Geologist EnglishLanguage " A specialist in &%Geology.")
+
+(=>
+  (attribute ?PERSON Geologist)
+  (hasExpertise ?PERSON Geology)) 
+
+(instance Historian Profession)
+(documentation Historian EnglishLanguage "A person who is an authority on &%History and who studies it and writes about it.")
+
+(=>
+  (attribute ?PERSON Historian)
+  (hasExpertise ?PERSON History)) 
+
+(instance Linguist Profession)
+(subAttribute Linguist Scientist)
+(documentation Linguist EnglishLanguage "A specialist in &%Linguistics.")
+
+(=>
+  (attribute ?PERSON Linguist)
+  (hasExpertise ?PERSON Linguistics))  
+  
+(instance Mathematician Profession)
+(documentation Mathematician EnglishLanguage "A person skilled in &%Mathematics.")
+
+(=>
+  (attribute ?PERSON Mathematician)
+  (hasExpertise ?PERSON Mathematics))
+  
+(instance MedicalResearcher Profession)
+(subAttribute MedicalResearcher Scientist)
+(documentation MedicalResearcher EnglishLanguage "A &%Scientist who devotes himself to doing medical research.")
+
+(=>
+  (attribute ?PERSON MedicalResearcher)
+  (and
+    (attribute ?PERSON Researcher)
+    (hasExpertise ?PERSON MedicalScience)))  
+    
+(instance Paleontologist Profession)
+(subAttribute Paleontologist Scientist)
+(documentation Paleontologist EnglishLanguage "A specialist in paleontology, the earth science that studies fossil organisms and related remains.") 
+
+(=>
+  (attribute ?PERSON Paleontologist)
+  (hasExpertise ?PERSON Paleontology))
+  
+(instance Philosopher Profession)
+(documentation Philosopher EnglishLanguage "A specialist in &%Philosophy.")
+;; for philosophers wikipedia has   school_tradition, main interests, notable ideas, era, influences
+
+(=>
+  (attribute ?PERSON Philosopher)
+  (hasExpertise ?PERSON Philosophy))
+  
+(instance Psychologist Profession)
+(subAttribute Psychologist Scientist)
+(documentation Psychologist EnglishLanguage "A scientist trained in &%Psychology.")
+
+(=>
+  (attribute ?PERSON Psychologist)
+  (hasExpertise ?PERSON Psychology))  
+  
+(instance Physicist Profession)
+(subAttribute Physicist Scientist)
+(documentation Physicist EnglishLanguage " A scientist trained in &%Physics.")
+
+(=>
+  (attribute ?PERSON Physicist)
+  (hasExpertise ?PERSON Physics))  
+  
+(instance PoliticalScientist Profession)
+(subAttribute PoliticalScientist Scientist)
+(documentation PoliticalScientist EnglishLanguage "A social scientist specializing &%PoliticalScience,  the study of government.")
+
+(=>
+  (attribute ?PERSON PoliticalScientist)
+  (hasExpertise ?PERSON PoliticalScience)) 
+  
+(instance Librarian Profession)
+(subAttribute Librarian Scientist)
+(documentation Librarian EnglishLanguage "A professional person trained in library science and engaged in &%Library services.")
+
+(=>
+  (attribute ?PERSON Librarian)
+  (hasExpertise ?PERSON LibraryScience))
+  
+(instance RegisteredNurse Profession)
+(documentation RegisteredNurse EnglishLanguage "A graduate nurse who has passed examinations for registration.")
+
+(=>
+  (attribute ?PERSON RegisteredNurse)
+  (hasExpertise ?PERSON TherapeuticProcess)) 
+  
+(instance Sociologist Profession)
+(subAttribute Sociologist Scientist)
+(documentation Sociologist EnglishLanguage "A social scientist who studies the institutions and development of human society as part of &%Sociology.")
+
+(=>
+  (attribute ?PERSON Sociologist)
+  (hasExpertise ?PERSON Sociology)) 
+
+(instance Statistician Profession)
+(documentation Statistician EnglishLanguage "A &%Mathematician who specializes in &%Statistics.")
+
+(=>
+  (attribute ?PERSON Statistician)
+  (hasExpertise ?PERSON Statistics))
+
+(instance Theologian Profession)
+(documentation Theologian EnglishLanguage "Someone who is learned in &%Theology or who speculates about theology.")
+
+(=>
+  (attribute ?PERSON Theologian)
+  (hasExpertise ?PERSON Theology))
+
+(instance Veterinarian Profession)
+(subAttribute Veterinarian Scientist)
+(documentation Veterinarian EnglishLanguage "A doctor who practices veterinary medicine.")
+
+(=>
+  (attribute ?PERSON Veterinarian)
+  (hasExpertise ?PERSON VeterinaryScience))
+
+(instance Zoologist Profession)
+(subAttribute Zoologist Scientist)
+(documentation Zoologist EnglishLanguage "A specialist in the branch of &%Biology dealing with animals.")
+
+(=>
+  (attribute ?PERSON Zoologist)
+  (hasExpertise ?PERSON Zoology))
+  
+(instance Botanist Profession)
+(subAttribute Botanist Scientist)
+(documentation Botanist EnglishLanguage "A biologist specializing in the study of plants.")
+
+(=>
+  (attribute ?PERSON Botanist)
+  (hasExpertise ?PERSON Botany)) 
+;-------------------------------------------------------------
+;; Management Professions
+;;------------------------------------------------------------
+; Managerial Professions include Financial Analysts, Quantity Surveyors, Estate Agents, etc...
+
+  
+;;;--------------------------------------------------------------------
+;;; Skilled Occupations
+;;;-------------------------------------------------------------------- 
+;;; SkilledOccupation is defined in Mid-level-ontology.kif, here are more specific occupations that are instances or subclasses of SkilledOccupation.
+
+(instance Pilot SkilledOccupation)
+(documentation Pilot EnglishLanguage "Any &%SkilledOccupation that involves &%Driving an &%Aircraft")
+(termFormat EnglishLanguage Pilot "Pilot")
+
+(=>
+  (and
+    (instance ?PILOT Human)
+    (attribute ?PILOT Pilot))
+  (hasSkill FlyingAircraft ?PILOT))
+  
+(instance Astronaut SkilledOccupation)
+(documentation Astronaut EnglishLanguage "A person trained to travel in a spacecraft.")
+
+(=>
+  (attribute ?ASTRONAUT Astronaut)
+  (hasSkill SpaceTransportation ?ASTRONAUT))
+
+(instance Photographer SkilledOccupation)
+(documentation Photographer EnglishLanguage "A photographer is a person who takes photographs, for profit or for fun.")
+
+(=>
+  (attribute ?PERSON Photographer)
+  (hasSkill Photographing ?PERSON)) 
+  
+(instance Tailor SkilledOccupation)
+(documentation Tailor EnglishLanguage "A tailor is a person who makes, repairs, or alters clothing professionally, especially suits and men's clothing.")
+
+(=>
+  (attribute ?PERSON Tailor)
+  (hasSkill Sewing ?PERSON)) 
+;;---------------------------------------------------------------------------------- 
+;; The Criative Economy Occupations  from http://en.wikipedia.org/wiki/Creative_industries
+;;----------------------------------------------------------------------------------
+
+
+  
+;;;;;ArtisticOccupation
+;;msvarny: ArtisticOccupation is conflicting a bit with EntertainmentProfession defined in Mid-level-ontology.kif, but the name of this term itself seemed to me more appropriate so I will merge both terms using the name ArtisticOccupation.
+
+(subclass ArtisticOccupation SkilledOccupation)
+(documentation ArtisticOccupation EnglishLanguage "People in design, education, arts, music and entertainment, whose economic function is to create new ideas, new technology and/ or creative content. [Will be merged with EntertainmentProfession in in Mid-level-ontology.kif using the name ArtisticOccupation, msvarny]")
+
+(instance Dancer ArtisticOccupation)
+(documentation Dancer EnglishLanguage "A dancer is one who performs dance, either professionally or for personal enjoyment.")
+
+(=>
+  (attribute ?PERSON Dancer)
+  (hasSkill Dancing ?PERSON))
+
+(instance Designer ArtisticOccupation)
+(documentation Designer EnglishLanguage "Someone who creates plans to be used in making something, such as gardens, buildings, clothes, artwork, etc.")
+
+(=>
+  (attribute ?PERSON Designer)
+  (hasSkill Designing ?PERSON))
+
+(instance Draftsman ArtisticOccupation)
+(documentation Draftsman EnglishLanguage "An artist skilled at drawing, an skilled worker who draws plans of buildings or machines.")
+
+(=>
+  (attribute ?PERSON Draftsman)
+  (hasSkill Drawing ?PERSON))
+
+(instance Painter ArtisticOccupation)
+(documentation Painter EnglishLanguage "An artist who paints.")
+
+(=>
+  (attribute ?PERSON Painter)
+  (hasSkill ArtPainting ?PERSON))
+
+(instance Sculptor ArtisticOccupation)
+(documentation Sculptor EnglishLanguage "An artist who creates &%Sculptures.")
+
+(=>
+  (attribute ?PERSON Sculptor)
+  (hasSkill Sculpting ?PERSON))
+
+(instance Writer ArtisticOccupation)
+(documentation Writer EnglishLanguage "Someone who writes (books or stories or articles or the like) professionally (for pay).(WordNet definition). Which means it is an &%ArtisticOccupation, which implies that the person who has this &%Attribute has the skill to &%WrittenCommunication and &%Writing. Also it implies that there exists a &%Text created by the &%Writer.")
+;possible subs   Novelist, playwright, poet, essayist, critic
+
+(=>
+  (attribute ?PERSON Writer)
+  (hasSkill WrittenCommunication ?PERSON))
+
+(=>
+    (attribute ?PERSON Writer)
+    (hasSkill Writing ?PERSON))
+
+(=>
+  (attribute ?X Writer)
+  (exists (?OBJ)
+    (and
+      (instance ?PROC Writing)
+      (or
+        (instance ?OBJ Text)
+        (instance ?OBJ Document))
+      (agent ?PROC ?X)
+      (result ?PROC ?OBJ))))
+      
+(=>
+  (and
+    (attribute ?X Writer)
+    (or
+      (instance ?TEXT Text)
+      (instance ?TEXT Document))
+    (instance ?WRITE Writing)
+    (agent ?WRITE ?X)
+    (patient ?WRITE ?TEXT))
+  (and
+    (authors ?X ?TEXT)
+    (result ?WRITE ?TEXT)))
+    
+(=>
+  (and
+    (instance ?PERSON Human)
+    (instance ?WRITE Writing)
+    (or
+      (instance ?TEXT Text)
+      (instance ?TEXT Document))
+    (result ?WRITE ?TEXT)
+    (agent ?WRITE ?PERSON))
+  (and
+    (authors ?PERSON ?TEXT)
+    (attribute ?PERSON Writer)))
+
+(subAttribute VoiceActor Actor)
+(instance VoiceActor ArtisticOccupation)
+(documentation VoiceActor EnglishLanguage "Like an &%Actor, a &%VoiceActor is also an agent of the dramatic performance.  However, only his voice can be heard and not the actor himself")
+(termFormat EnglishLanguage VoiceActor "voice actor")
+
+(=>
+  (and
+    (attribute ?ACTOR VoiceActor)
+    (instance ?DRAMA DramaticActing)
+    (agent ?DRAMA ?ACTOR)
+    (instance ?SPEAK LinguisticCommunication)
+    (agent ?SPEAK ?ACTOR)
+    (subProcess ?SPEAK ?DRAMA)
+    (instance ?W Watching)
+    (patient ?W ?DRAMA)
+    (agent ?W ?VIEWER))
+  (and
+    (not
+      (exists (?S)
+        (and
+          (instance ?S Seeing)
+          (patient ?S ?ACTOR)
+          (agent ?S ?VIEWER))))
+    (exists (?H)
+      (and
+        (instance ?H Hearing)
+        (patient ?H ?ACTOR)
+        (agent ?H ?VIEWER)))))
