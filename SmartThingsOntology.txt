@@ -145,3 +145,5 @@ that can operate to some extent interactively and autonomously.")
 ;; SUMO Mappings: Sensor (equivalent mapping) 
 
 ;;=================================================
+;; smart devices have capabilities described in https://smartthings.developer.samsung.com/docs/api-ref/capabilities.html
+;; there 74 capabilities described in the documentation, out of which 42 are proposed
