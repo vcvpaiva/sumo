@@ -63,39 +63,43 @@
 ;; (documentation ElectricDevice EnglishLanguage "A Device that uses Electricity as its primary power source.")
 ;; (subclass ElectricDevice Device)
 
-;; proposed
+;; ElectronicDEvice proposed
 (subclass smartDevice ElectricDevice)
 (subclass ElectronicDevice ElectricDevice)
 (subclass smartDevice ElectronicDevice)
 (documentation ElectronicDevice EnglishLanguage "An electric Device where the main functionality is provided by electronic circuits.")
 
-;; Air Purifier  to be added
+;; Air Purifier  proposed
 (subclass AirPurifier ElectricDevice)
 ;; air purifier (Q1196206) wikidata
 (documentation AirPurifier EnglishLanguage 
 "AirPurifier is a type of ElectricDevice that is designed to  remove contaminants from the air in a room to improve indoor air quality.")
 
-;; smartDevice  to be added
-(subclass smartDevice ElectricDevice)
+;; SmartDevice  proposed
+(subclass SmartDevice ElectricDevice)
 (documentation SmartDevice EnglishLanguage 
-"A SmartDevice is a type of ElectronicDevice, generally connected to other devices or networks via different wireless protocols, 
-that can operate to some extent interactively and autonomously.") 
+"A SmartDevice is a type of ElectronicDevice, generally connected to other devices or networks via different wireless protocols, that can operate to some extent interactively and autonomously.") 
 
-;; many home appliances have smart analogues such as smart speakers (Alexa, GoogleHome, etc) and smart tvs
+;; many home appliances have smart analogues such as smart speakers (Alexa, GoogleHome, etc), smartphones and smart tvs
 (subclass smartSpeaker SpeakerDevice)
+(subclass smartSpeaker SmartDevice)
 (subclass smartTV TelevisionSet)
+(subclass smartTV SmartDevice)
 ;; 	Mid-level-ontology.kif 22993-22993 	Mobile cell phone is a subclass of receiver device
 ;; (subclass MobileCellPhone Telephone)
 (subclass  SmartCellPhone MobileCellPhone)
+(subclass  SmartCellPhone SmartDevice)
 
 ;; (subclass ClothesWashingMachine MajorAppliance) 	 	Clothes washing machine is a subclass of major appliance
 ;; (subclass ClothesWashingMachine WashingDevice)
 (subclass SmartWashingMachine ClothesWashingMachine)
+(subclass SmartWashingMachine SmartDevice)
 
 (subclass SmartDoorLock DoorLock)
 ;; (documentation Lock EnglishLanguage "A Device, which, through a Key or a combination prevents access to a Container or StationaryArtifact.")
 ;; (subclass Lock SecurityDevice)
 (subclass DoorLock Lock)
+(subclass SmartDoorLock SmartDevice)
 (documentation DoorLock EnglishLanguage "A Device, which, through a Key or a combination prevents access via a Door to a Container or StationaryArtifact.")
 ;; (documentation Door EnglishLanguage "An Artifact that restricts and permits access to a StationaryArtifact (e.g. Building or Room) depending on whether the Door is open or locked. Note that the class Door also covers gates, because it is not possible to define objective criteria that reliably distinguish doors from gates.") 	 	
 ;; (subclass Door Device)
@@ -139,20 +143,20 @@ that can operate to some extent interactively and autonomously.")
 
 ;; Sensor the SUMO concept seems to me too restrictive
 ;; (subclass Sensor ComputerHardware) BUT there are plenty of sensors that have nothing to do with computer hardware
-;; 103180969 any device that receives a signal or stimulus (as heat or pressure or light or motion etc.) and responds to it in a distinctive manner.
+;; WordNet seems better 103180969 any device that receives a signal or stimulus (as heat or pressure or light or motion etc.) and responds to it in a distinctive manner.
 ;; SUMO Mappings: MeasuringDevice (subsuming mapping) 
 ;; 115309590 "&%Sensors include software that measures any attribute of executing computer programs or collections of executing programs, such as CPU utilization, aka load, memory utilization, I/O, overall task performance, network load and latency, etc." (entry from SUMO termFormat and documentation) .
 ;; SUMO Mappings: Sensor (equivalent mapping) 
 
 ;;=================================================
 ;; smart devices have capabilities described in https://smartthings.developer.samsung.com/docs/api-ref/capabilities.html
-;; there 74 capabilities described in the documentation, out of which 42 are proposed
+;; there are 74(?) capabilities described in the documentation, out of which 42 are live and 32 only proposed
 
-;; 106584891 (computer science) a line of code written as part of a computer program.
+;; command 106584891 (computer science) a line of code written as part of a computer program.
 ;; SUMO Mappings: Directing (subsuming mapping) 
 ;; 107168131 an authoritative direction or instruction to do something.
 ;; SUMO Mappings: Ordering (equivalent mapping) 
 
-;;201717169 cause to emit recorded audio or video; "They ran the tapes over and over again"; "I'll play you my favorite record"; "He never tires of playing that video".
+;;play 201717169 cause to emit recorded audio or video; "They ran the tapes over and over again"; "I'll play you my favorite record"; "He never tires of playing that video".
 ;; SUMO Mappings: IntentionalProcess (subsuming mapping) 
 
