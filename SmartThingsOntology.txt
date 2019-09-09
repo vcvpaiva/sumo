@@ -2,24 +2,24 @@
 ;;                  SmartThings Ontology
 ;; ============================================================================
 ;; Created by: Valeria de Paiva (vdepaiva [at] gmail [dot] com)
-;; 
 ;; Created on: Sept 8, 2019
 ;; ============================
 ;; 
-;; Description:  This describes concepts related to smart devices, described in
+;; Description:  This describes concepts related to smart devices, especially the ones in
 ;; https://smartthings.developer.samsung.com/docs/devices/working-with-bixby.html.
 ;; 
 ;; Ontology dependencies for Biography.kif: 
 ;; Merge.kif
 ;; Mid-level-ontology.kif,  
 ;; Media.kif
-;; Music.kif 
+;;  
 
-;; We ask the people using or referencing this work cite our primary paper:
+;; People using or referencing this work please cite the primary paper:
 ;; Niles, I., and Pease, A.  2001.  Towards a Standard Upper Ontology.  In 
 ;; Proceedings of the 2nd International Conference on Formal Ontology in 
 ;; Information Systems (FOIS-2001), Chris Welty and Barry Smith, eds, 
-;; Ogunquit, Maine, October 17-19, 2001.  See also http://www.ontologyportal.org
+;; Ogunquit, Maine, October 17-19, 2001.  
+;; See also http://www.ontologyportal.org
 
 ;; ================================
 ;; Outline
@@ -39,10 +39,10 @@
 ;;	Air Purifier
 ;;	Washer
 ;;	Robot vacuum cleaner
-;;	Speaker
-;;	TV
+;;	(smart) Speaker
+;;	smart TV
 ;;	Door lock
-;;	Light
+;;	(smart) Light
 ;;	Motion sensor
 ;;	Multi-functional sensor
 ;;	Open and close sensor
@@ -53,25 +53,26 @@
 ;;	Vent
 
 
-;; air conditioner 
+;; Air conditioner 
 ;; see http://sigma.ontologyportal.org:8080/sigma/Browse.jsp?flang=SUO-KIF&lang=EnglishLanguage&kb=SUMO&term=AirConditioner
 ;; (subclass AirConditioner ElectricDevice)
 ;; (documentation AirConditioner EnglishLanguage "AirConditioner is a type of ElectricDevice that is designed 
-;; to provide comfort during hot or cold weather by keeping the air in an area a specific temperature")
-;; has purpose and is part of the hotel ontology
+;; to provide comfort during hot or cold weather by keeping the air in an area at a specific temperature")
 ;; (subclass AirConditioner ElectricDevice)
 
 ;; (documentation ElectricDevice EnglishLanguage "A Device that uses Electricity as its primary power source.")
 ;; (subclass ElectricDevice Device)
 
-(subclass smartDevice ElectronicDevice)
+;; proposed
 (subclass smartDevice ElectricDevice)
+(subclass ElectronicDevice ElectricDevice)
+(subclass smartDevice ElectronicDevice)
 (documentation ElectronicDevice EnglishLanguage "An electric Device where the main functionality is provided by electronic circuits.")
 
 ;; Air Purifier  to be added
 (subclass AirPurifier ElectricDevice)
 ;; air purifier (Q1196206) wikidata
-(documentation AirConditioner EnglishLanguage 
+(documentation AirPurifier EnglishLanguage 
 "AirPurifier is a type of ElectricDevice that is designed to  remove contaminants from the air in a room to improve indoor air quality.")
 
 ;; smartDevice  to be added
@@ -106,4 +107,5 @@ that can operate to some extent interactively and autonomously.")
 (subclass smartElectricLight SmartDevice)
 
 ;; (subclass Accelerometer Sensor)  (good!)
-;; (subclass Sensor ComputerHardware) bad, as  a sensor that measures moisture does not need to be computer hardware
+;; (subclass Sensor ComputerHardware) (bad, as  a sensor that measures moisture does not need to be computer hardware
+;; (documentation Sensor EnglishLanguage "Sensors include software that measures any attribute of executing computer programs or collections of executing programs, such as CPU utilization, aka load, memory utilization, I/ O, overall task performance, network load and latency, etc.") 	
