@@ -109,3 +109,6 @@ that can operate to some extent interactively and autonomously.")
 ;; (subclass Accelerometer Sensor)  (good!)
 ;; (subclass Sensor ComputerHardware) (bad, as  a sensor that measures moisture does not need to be computer hardware
 ;; (documentation Sensor EnglishLanguage "Sensors include software that measures any attribute of executing computer programs or collections of executing programs, such as CPU utilization, aka load, memory utilization, I/ O, overall task performance, network load and latency, etc.") 	
+
+;; (documentation ElectricalOutlet EnglishLanguage "ElectricalOutlet refers to a Device that is used to connect a plug to a power source so that Electricity can flow from the source to an ElectricDevice") 		
+(subclass ElectricalOutlet Device)
