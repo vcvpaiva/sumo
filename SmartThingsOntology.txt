@@ -147,3 +147,12 @@ that can operate to some extent interactively and autonomously.")
 ;;=================================================
 ;; smart devices have capabilities described in https://smartthings.developer.samsung.com/docs/api-ref/capabilities.html
 ;; there 74 capabilities described in the documentation, out of which 42 are proposed
+
+;; 106584891 (computer science) a line of code written as part of a computer program.
+;; SUMO Mappings: Directing (subsuming mapping) 
+;; 107168131 an authoritative direction or instruction to do something.
+;; SUMO Mappings: Ordering (equivalent mapping) 
+
+;;201717169 cause to emit recorded audio or video; "They ran the tapes over and over again"; "I'll play you my favorite record"; "He never tires of playing that video".
+;; SUMO Mappings: IntentionalProcess (subsuming mapping) 
+
