@@ -111,4 +111,37 @@ that can operate to some extent interactively and autonomously.")
 ;; (documentation Sensor EnglishLanguage "Sensors include software that measures any attribute of executing computer programs or collections of executing programs, such as CPU utilization, aka load, memory utilization, I/ O, overall task performance, network load and latency, etc.") 	
 
 ;; (documentation ElectricalOutlet EnglishLanguage "ElectricalOutlet refers to a Device that is used to connect a plug to a power source so that Electricity can flow from the source to an ElectricDevice") 		
-(subclass ElectricalOutlet Device)
+(subclass ElectricalOutlet ElectricDevice)
+(subclass smartOutlet ElectricalOutlet)
+(subclass smartOutlet SmartDevice)
+
+;;(documentation SwitchDevice EnglishLanguage "An EngineeringComponent which is capable of turning an ElectricDevice on and off.")
+;;(subclass SwitchDevice EngineeringComponent)
+(subclass SwitchDevice ElectricDevice)
+(subclass SmartSwitch SwitchDevice)
+
+;; valve is fine
+;; 	(subclass Valve FluidPowerDevice) 		Valve is a subclass of fluid power device
+;;  (subclass Valve MechanicalDevice)
+(subclass SmartValve Valve) ;; mechanical device controlled by wirelees?
+
+
+;; a dimmer is simply
+;; 103199488 a rheostat that varies the current through an electric light in order to control the level of illumination.
+;; SUMO Mappings: Device (subsuming mapping) 
+;;a thermostat
+;; 104422875 a regulator for automatically regulating temperature by starting or stopping the supply of heat.
+;; SUMO Mappings: Device (subsuming mapping) 
+
+;; vent seems to be
+;; 104526241 a hole for the escape of gas or air.
+;; SUMO Mappings: Hole (subsuming mapping) 
+
+;; Sensor the SUMO concept seems to me too restrictive
+;; (subclass Sensor ComputerHardware) BUT there are plenty of sensors that have nothing to do with computer hardware
+;; 103180969 any device that receives a signal or stimulus (as heat or pressure or light or motion etc.) and responds to it in a distinctive manner.
+;; SUMO Mappings: MeasuringDevice (subsuming mapping) 
+;; 115309590 "&%Sensors include software that measures any attribute of executing computer programs or collections of executing programs, such as CPU utilization, aka load, memory utilization, I/O, overall task performance, network load and latency, etc." (entry from SUMO termFormat and documentation) .
+;; SUMO Mappings: Sensor (equivalent mapping) 
+
+;;=================================================
