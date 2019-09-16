@@ -10,7 +10,7 @@
 ;; But the goal is to deal with all the devices/capabilities in the OCF, Open Connectiviy Foundation
 ;; https://openconnectivity.org/developer/specifications
 ;; 
-;; Ontology dependencies for SmartThings.kif: 
+;; Ontology dependencies for SmartThingsOntology.kif: 
 ;; Merge.kif
 ;; Mid-level-ontology.kif,  
 ;; Media.kif
