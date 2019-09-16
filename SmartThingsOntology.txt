@@ -7,8 +7,10 @@
 ;; 
 ;; Description:  This describes concepts related to smart devices, especially the ones in
 ;; https://smartthings.developer.samsung.com/docs/devices/working-with-bixby.html.
+;; But the goal is to deal with all the devices/capabilities in the OCF, Open Connectiviy Foundation
+;; https://openconnectivity.org/developer/specifications
 ;; 
-;; Ontology dependencies for Biography.kif: 
+;; Ontology dependencies for SmartThings.kif: 
 ;; Merge.kif
 ;; Mid-level-ontology.kif,  
 ;; Media.kif
@@ -34,7 +36,7 @@
 ;; Devices
 ;;---------------------------------------------------------------------
 
-;; these are the smart devices mentioned as working with Bixby:
+;; These are, initiially the smart devices mentioned as working with Bixby:
 ;;  Air conditioner
 ;;	Air Purifier
 ;;	Washer
@@ -51,7 +53,7 @@
 ;;	Thermostat
 ;;	Valve
 ;;	Vent
-
+;;  A fuller list is in https://openconnectivity.org/specs/OCF_Core_Specification_v2.0.5.pdf
 
 ;; Air conditioner 
 ;; see http://sigma.ontologyportal.org:8080/sigma/Browse.jsp?flang=SUO-KIF&lang=EnglishLanguage&kb=SUMO&term=AirConditioner
@@ -63,7 +65,7 @@
 ;; (documentation ElectricDevice EnglishLanguage "A Device that uses Electricity as its primary power source.")
 ;; (subclass ElectricDevice Device)
 
-;; ElectronicDEvice proposed
+;; ElectronicDevice proposed
 (subclass smartDevice ElectricDevice)
 (subclass ElectronicDevice ElectricDevice)
 (subclass smartDevice ElectronicDevice)
