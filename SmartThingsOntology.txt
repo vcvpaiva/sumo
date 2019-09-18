@@ -28,9 +28,9 @@
 ;; --------------------------------
 ;; Devices
 ;; Sensors
-;; Actions
 ;; Capabilities
 ;; Commands
+;; Attributes, Values
 ;; ================================
 ;;---------------------------------------------------------------------
 ;; Devices
@@ -43,7 +43,7 @@
 ;;	Robot vacuum cleaner
 ;;	(smart) Speaker
 ;;	smart TV
-;;	Door lock
+;;	(smart) Door lock
 ;;	(smart) Light
 ;;	Motion sensor
 ;;	Multi-functional sensor
@@ -53,7 +53,9 @@
 ;;	Thermostat
 ;;	Valve
 ;;	Vent
-;;  A fuller list is in https://openconnectivity.org/specs/OCF_Core_Specification_v2.0.5.pdf
+
+;;  A fuller list can be found in https://openconnectivity.org/specs/OCF_Core_Specification_v2.0.5.pdf
+;; Devices already in SUMO are repeated here, but commented out.
 
 ;; Air conditioner 
 ;; see http://sigma.ontologyportal.org:8080/sigma/Browse.jsp?flang=SUO-KIF&lang=EnglishLanguage&kb=SUMO&term=AirConditioner
@@ -152,7 +154,7 @@
 
 ;;=================================================
 ;; smart devices have capabilities described in https://smartthings.developer.samsung.com/docs/api-ref/capabilities.html
-;; there are 74(?) capabilities described in the documentation, out of which 42 are live and 32 only proposed
+;; there are 74 capabilities described in the documentation, out of which 42 are live and 32 only proposed
 
 ;; command 106584891 (computer science) a line of code written as part of a computer program.
 ;; SUMO Mappings: Directing (subsuming mapping) 
