@@ -147,14 +147,28 @@
 
 ;; Sensor the SUMO concept seems to me too restrictive
 ;; (subclass Sensor ComputerHardware) BUT there are plenty of sensors that have nothing to do with computer hardware
-;; WordNet seems better 103180969 any device that receives a signal or stimulus (as heat or pressure or light or motion etc.) and responds to it in a distinctive manner.
+;; WordNet seems better wn-103180969 any device that receives a signal or stimulus (as heat or pressure or light or motion etc.) and responds to it in a distinctive manner.
 ;; SUMO Mappings: MeasuringDevice (subsuming mapping) 
 ;; 115309590 "&%Sensors include software that measures any attribute of executing computer programs or collections of executing programs, such as CPU utilization, aka load, memory utilization, I/O, overall task performance, network load and latency, etc." (entry from SUMO termFormat and documentation) .
 ;; SUMO Mappings: Sensor (equivalent mapping) 
 
 ;;=================================================
-;; smart devices have capabilities described in https://smartthings.developer.samsung.com/docs/api-ref/capabilities.html
-;; there are 74 capabilities described in the documentation, out of which 42 are live and 32 only proposed
+;; It is harder to decide what to do  about commands,  actions, capabilities, attributes, values, etc.
+;; SmartThings are organized in terms of capabilities, which consist of commands and properties or attributes.
+;; SmartThings devices have capabilities described in https://smartthings.developer.samsung.com/docs/api-ref/capabilities.html
+;; An application interacts with devices based on their capabilities, so once we understand the capabilities that are needed ;; by a SmartApp, and the capabilities that are provided by a device, we can understand which devices (based on the Device’s ;; declared capabilities) are eligible for use within a specific SmartApp.
+;; There are 74 capabilities described in the documentation, out of which 42 are live and 32  proposed. 
+;; These can be very low level.  
+
+;; By contrast OCF processes which are geared towards interconnectivity, seem much more restricted in numbers. 
+;; Only 5: Create, Retrieve, Update, Delete, Notify.
+
+;; https://openconnectivity.org/foundation/faq/smarthome-faq says:
+;; IoT Smart Home is an ecosystem made up of device-to-device or device-to-service interactions where-in devices generate information, share it and take actions based on the information. The devices and services essentially speak the same language and give and receive instructions. For example, a smart security system motion detector, when it senses movement could trigger the smart lighting to turn on the light in the room or thermostat to adjust the climate controls.device. 
+;; Smart home devices (e.g., laundry machines, thermostats and security systems) should be able to communicate with one another regardless of manufacturer, operating system, chipset or physical transport.  The OCF Smart Home Project is creating common data modeling for secure interoperability. The Project utilizes OCF technology to specify how Smart Home devices interoperate.
+;; page 20 of the long doc (https://openconnectivity.org/specs/OCF_Core_Specification_v2.0.5.pdf) says:
+Conformant to  the  REST  architectural  style,  each  RESTful operation contains  all  the  information  necessary  to  understand the context of the interaction and is driven using a small set of generic operations , i.e., CREATE, RETRIEVE, UPDATE, DELETE and NOTIFY (CRUDN) defined in  clause 8, which include representations of Resources .
+;;Consumers want choice, and this requires smart home devices to be platform agnostic and communicate with one another regardless of manufacturer.
 
 ;; command 106584891 (computer science) a line of code written as part of a computer program.
 ;; SUMO Mappings: Directing (subsuming mapping) 
