@@ -57,6 +57,22 @@
 ;;  A fuller list can be found in https://openconnectivity.org/specs/OCF_Core_Specification_v2.0.5.pdf
 ;; Devices already in SUMO are repeated here, but commented out.
 
+;;=============================
+;; First electric devices
+;; (documentation ElectricDevice EnglishLanguage "A Device that uses Electricity as its primary power source.")
+;; (subclass ElectricDevice Device)
+
+;; ElectronicDevice proposed
+(subclass ElectronicDevice ElectricDevice)
+(documentation ElectronicDevice EnglishLanguage "An electric Device where the main functionality is provided by electronic circuits.")
+
+;; SmartDevice  proposed
+(subclass SmartDevice ElectricDevice)
+(subclass SmartDevice ElectronicDevice)
+(documentation SmartDevice EnglishLanguage 
+"A SmartDevice is a type of ElectronicDevice, generally connected to other devices or networks via different wireless protocols, that can operate to some extent interactively and autonomously.") 
+;;(documentation SmartDevice EnglishLanguage "An electronic device where the control is provided via wifi.")??
+
 ;; Air conditioner 
 ;; see http://sigma.ontologyportal.org:8080/sigma/Browse.jsp?flang=SUO-KIF&lang=EnglishLanguage&kb=SUMO&term=AirConditioner
 ;; (subclass AirConditioner ElectricDevice)
@@ -64,14 +80,10 @@
 ;; to provide comfort during hot or cold weather by keeping the air in an area at a specific temperature")
 ;; (subclass AirConditioner ElectricDevice)
 
-;; (documentation ElectricDevice EnglishLanguage "A Device that uses Electricity as its primary power source.")
-;; (subclass ElectricDevice Device)
-
-;; ElectronicDevice proposed
-(subclass smartDevice ElectricDevice)
-(subclass ElectronicDevice ElectricDevice)
-(subclass smartDevice ElectronicDevice)
-(documentation ElectronicDevice EnglishLanguage "An electric Device where the main functionality is provided by electronic circuits.")
+;; SmartAirConditioner proposed
+ (subclass SmartAirConditioner AirConditioner)
+ (subclass SmartAirConditioner SmartDevice)
+ (documentation SmartAirConditioner EnglishLanguage "SmartAirConditioner is a type of AirConditioner that is designed to be     controlled via your smartphone over wifi")
 
 ;; Air Purifier  proposed
 (subclass AirPurifier ElectricDevice)
@@ -79,16 +91,11 @@
 (documentation AirPurifier EnglishLanguage 
 "AirPurifier is a type of ElectricDevice that is designed to  remove contaminants from the air in a room to improve indoor air quality.")
 
-;; SmartDevice  proposed
-(subclass SmartDevice ElectricDevice)
-(documentation SmartDevice EnglishLanguage 
-"A SmartDevice is a type of ElectronicDevice, generally connected to other devices or networks via different wireless protocols, that can operate to some extent interactively and autonomously.") 
-
-;; many home appliances have smart analogues such as smart speakers (Alexa, GoogleHome, etc), smartphones and smart tvs
-(subclass smartSpeaker SpeakerDevice)
-(subclass smartSpeaker SmartDevice)
-(subclass smartTV TelevisionSet)
-(subclass smartTV SmartDevice)
+;; proposed smartSpeaker 
+(subclass SmartSpeaker SpeakerDevice)
+(subclass SmartSpeaker SmartDevice)
+(subclass SmartTV TelevisionSet)
+(subclass SmartTV SmartDevice)
 ;; 	Mid-level-ontology.kif 22993-22993 	Mobile cell phone is a subclass of receiver device
 ;; (subclass MobileCellPhone Telephone)
 (subclass  SmartCellPhone MobileCellPhone)
@@ -114,7 +121,7 @@
 (subclass smartElectricLight LightFixture)
 (subclass smartElectricLight SmartDevice)
 
-;; (subclass Accelerometer Sensor)  (good!)
+;; (subclass Accelerometer Sensor)  
 ;; (subclass Sensor ComputerHardware) (bad, as  a sensor that measures moisture does not need to be computer hardware
 ;; (documentation Sensor EnglishLanguage "Sensors include software that measures any attribute of executing computer programs or collections of executing programs, such as CPU utilization, aka load, memory utilization, I/ O, overall task performance, network load and latency, etc.") 	
 
@@ -128,7 +135,7 @@
 (subclass SwitchDevice ElectricDevice)
 (subclass SmartSwitch SwitchDevice)
 
-;; valve is fine
+;; valve 
 ;; 	(subclass Valve FluidPowerDevice) 		Valve is a subclass of fluid power device
 ;;  (subclass Valve MechanicalDevice)
 (subclass SmartValve Valve) ;; mechanical device controlled by wirelees?
