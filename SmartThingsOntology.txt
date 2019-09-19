@@ -99,8 +99,7 @@
 (subclass  SmartCellPhone MobileCellPhone)
 (subclass  SmartCellPhone SmartDevice)
 
-;; (subclass ClothesWashingMachine MajorAppliance) 	 	Clothes washing machine is a subclass of major appliance
-;; (subclass ClothesWashingMachine WashingDevice)
+;; (subclass ClothesWashingMachine MajorAppliance) 	 	
 (subclass SmartWashingMachine ClothesWashingMachine)
 (subclass SmartWashingMachine SmartDevice)
 
@@ -150,10 +149,12 @@
 
 ;; a dimmer is simply
 ;; 103199488 a rheostat that varies the current through an electric light in order to control the level of illumination.
+;; wikipedia: Dimmers are devices connected to a light fixture and used to lower the brightness of light.
 ;; SUMO Mappings: Device (subsuming mapping) 
-;;a thermostat
-;; 104422875 a regulator for automatically regulating temperature by starting or stopping the supply of heat.
-;; SUMO Mappings: Device (subsuming mapping) 
+;; a thermostat
+;; PWN: 104422875 a regulator for automatically regulating temperature by starting or stopping the supply of heat.
+;; wikipedia: A thermostat is a device which senses the temperature of a physical system and performs actions so that the system's temperature is maintained near a desired setpoint.
+;; SUMO Mappings: MeasuringDevice (subsuming mapping) (at the moment only Device)
 
 ;; vent seems to be
 ;; 104526241 a hole for the escape of gas or air.
@@ -168,6 +169,7 @@
 
 ;;=================================================
 ;; It is harder to decide what to do  about commands,  actions, capabilities, attributes, values, etc.
+
 ;; SmartThings are organized in terms of capabilities, which consist of commands and properties or attributes.
 ;; SmartThings devices have capabilities described in https://smartthings.developer.samsung.com/docs/api-ref/capabilities.html
 ;; An application interacts with devices based on their capabilities, so once we understand the capabilities that are needed ;; by a SmartApp, and the capabilities that are provided by a device, we can understand which devices (based on the Device’s ;; declared capabilities) are eligible for use within a specific SmartApp.
@@ -176,7 +178,6 @@
 
 ;; By contrast OCF processes which are geared towards interconnectivity, seem much more restricted in numbers. 
 ;; Only 5: Create, Retrieve, Update, Delete, Notify.
-
 ;; https://openconnectivity.org/foundation/faq/smarthome-faq says:
 ;; IoT Smart Home is an ecosystem made up of device-to-device or device-to-service interactions where-in devices generate information, share it and take actions based on the information. The devices and services essentially speak the same language and give and receive instructions. For example, a smart security system motion detector, when it senses movement could trigger the smart lighting to turn on the light in the room or thermostat to adjust the climate controls.device. 
 ;; Smart home devices (e.g., laundry machines, thermostats and security systems) should be able to communicate with one another regardless of manufacturer, operating system, chipset or physical transport.  The OCF Smart Home Project is creating common data modeling for secure interoperability. The Project utilizes OCF technology to specify how Smart Home devices interoperate.
@@ -184,11 +185,5 @@
 Conformant to  the  REST  architectural  style,  each  RESTful operation contains  all  the  information  necessary  to  understand the context of the interaction and is driven using a small set of generic operations , i.e., CREATE, RETRIEVE, UPDATE, DELETE and NOTIFY (CRUDN) defined in  clause 8, which include representations of Resources .
 ;;Consumers want choice, and this requires smart home devices to be platform agnostic and communicate with one another regardless of manufacturer.
 
-;; command 106584891 (computer science) a line of code written as part of a computer program.
-;; SUMO Mappings: Directing (subsuming mapping) 
-;; 107168131 an authoritative direction or instruction to do something.
-;; SUMO Mappings: Ordering (equivalent mapping) 
-
-;;play 201717169 cause to emit recorded audio or video; "They ran the tapes over and over again"; "I'll play you my favorite record"; "He never tires of playing that video".
-;; SUMO Mappings: IntentionalProcess (subsuming mapping) 
+ 
 
