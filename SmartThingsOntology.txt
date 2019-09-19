@@ -37,24 +37,24 @@
 ;;---------------------------------------------------------------------
 
 ;; These are, initiially the smart devices mentioned as working with Bixby:
-;;  Air conditioner
-;;	Air Purifier
-;;	Washer
+;; (smart) Air conditioner
+;;	(smart) Air Purifier
+;;	(smart) Washer
 ;;	Robot vacuum cleaner
 ;;	(smart) Speaker
-;;	smart TV
+;;	(smart) TV
 ;;	(smart) Door lock
 ;;	(smart) Light
 ;;	Motion sensor
 ;;	Multi-functional sensor
 ;;	Open and close sensor
-;;	Outlet
+;;	(smart) Outlet
 ;;	Switch & Dimmer
-;;	Thermostat
-;;	Valve
-;;	Vent
+;;	(smart) Thermostat
+;;	(smart) Valve
+;;	(smart) Vent
 
-;;  A fuller list can be found in https://openconnectivity.org/specs/OCF_Core_Specification_v2.0.5.pdf
+;; A fuller list can be found in https://openconnectivity.org/specs/OCF_Core_Specification_v2.0.5.pdf
 ;; Devices already in SUMO are repeated here, but commented out.
 
 ;;=============================
@@ -74,11 +74,9 @@
 ;;(documentation SmartDevice EnglishLanguage "An electronic device where the control is provided via wifi.")??
 
 ;; Air conditioner 
-;; see http://sigma.ontologyportal.org:8080/sigma/Browse.jsp?flang=SUO-KIF&lang=EnglishLanguage&kb=SUMO&term=AirConditioner
 ;; (subclass AirConditioner ElectricDevice)
 ;; (documentation AirConditioner EnglishLanguage "AirConditioner is a type of ElectricDevice that is designed 
 ;; to provide comfort during hot or cold weather by keeping the air in an area at a specific temperature")
-;; (subclass AirConditioner ElectricDevice)
 
 ;; SmartAirConditioner proposed
  (subclass SmartAirConditioner AirConditioner)
@@ -111,19 +109,28 @@
 ;; (subclass Lock SecurityDevice)
 (subclass DoorLock Lock)
 (subclass SmartDoorLock SmartDevice)
-(documentation DoorLock EnglishLanguage "A Device, which, through a Key or a combination prevents access via a Door to a Container or StationaryArtifact.")
+(documentation SmartDoorLock EnglishLanguage "A DoorLock, which, through wifi allows or prevents access via a Door to a Container or StationaryArtifact.")
 ;; (documentation Door EnglishLanguage "An Artifact that restricts and permits access to a StationaryArtifact (e.g. Building or Room) depending on whether the Door is open or locked. Note that the class Door also covers gates, because it is not possible to define objective criteria that reliably distinguish doors from gates.") 	 	
 ;; (subclass Door Device)
 
 ;; (documentation LightFixture EnglishLanguage "Any Device whose purpose is to be a source of visible light.") 	
 ;;( subclass LightFixture Device)
 ;; (subclass ElectricLightFixture LightFixture)
-(subclass smartElectricLight LightFixture)
-(subclass smartElectricLight SmartDevice)
+(subclass SmartElectricLight LightFixture)
+(subclass SmartElectricLight SmartDevice)
+
+;; Sensors seem to be only ComputerSensors in SUMO at the moment
+;; documentation Sensor EnglishLanguage "Sensors include software that measures any attribute of executing computer programs or collections of executing programs, such as CPU utilization, aka load, memory utilization, I/ O, overall task performance, network load and latency, etc.")	
+;; (subclass Sensor ComputerHardware)
+;; need to redefine this as ComputerSensor and have a more generic notion of Sensor
 
 ;; (subclass Accelerometer Sensor)  
-;; (subclass Sensor ComputerHardware) (bad, as  a sensor that measures moisture does not need to be computer hardware
-;; (documentation Sensor EnglishLanguage "Sensors include software that measures any attribute of executing computer programs or collections of executing programs, such as CPU utilization, aka load, memory utilization, I/ O, overall task performance, network load and latency, etc.") 	
+(subclass MotionSensor Sensor)
+(subclass MoistureSensor Sensor)
+(subclass SmokeSensor Sensor)
+(subclass OpenCloseSensor Sensor)
+(subclass AirQualitySensor Sensor)
+(subclass DustSensor Sensor)
 
 ;; (documentation ElectricalOutlet EnglishLanguage "ElectricalOutlet refers to a Device that is used to connect a plug to a power source so that Electricity can flow from the source to an ElectricDevice") 		
 (subclass ElectricalOutlet ElectricDevice)
