@@ -60,7 +60,10 @@
 ;; Devices already in SUMO are repeated here, but commented out.
 
 ;;=============================
-;; First electric devices
+;; First  devices
+;; A Device is an Artifact whose purpose is to serve as an instrument in a specific subclass of Process.
+;; (subclass Device Artifact)
+;; then electric devices
 ;; (documentation ElectricDevice EnglishLanguage "A Device that uses Electricity as its primary power source.")
 ;; (subclass ElectricDevice Device)
 
@@ -135,7 +138,6 @@
 (subclass AirQualitySensor Sensor)
 (subclass DustSensor Sensor)
 ;;===========================================================
-
 ;; Other Smart Devices
 
 ;; (subclass ClothesWashingMachine MajorAppliance) 	 	
@@ -170,18 +172,15 @@
 ;; a dimmer is simply
 ;; 103199488 a rheostat that varies the current through an electric light in order to control the level of illumination.
 ;; wikipedia: Dimmers are devices connected to a light fixture and used to lower the brightness of light.
-;; SUMO Mappings: Device (subsuming mapping) 
+;; SUMO Mappings: Device (subsuming mapping) too generic
 ;; a thermostat
 ;; PWN: 104422875 a regulator for automatically regulating temperature by starting or stopping the supply of heat.
 ;; wikipedia: A thermostat is a device which senses the temperature of a physical system and performs actions so that the system's temperature is maintained near a desired setpoint.
 ;; SUMO Mappings: MeasuringDevice (subsuming mapping) (at the moment only Device)
-
 ;; vent seems to be
 ;; 104526241 a hole for the escape of gas or air.
 ;; SUMO Mappings: Hole (subsuming mapping) 
-
 ;; 
-
 ;;=================================================
 ;; It is harder to decide what to do  about commands,  actions, capabilities, attributes, values, etc.
 
