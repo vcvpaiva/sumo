@@ -94,10 +94,14 @@
 (documentation AirPurifier EnglishLanguage 
 "AirPurifier is a type of ElectricDevice that is designed to  remove contaminants from the air in a room to improve indoor air quality.")
 (subclass SmartAirPurifier SmartDevice)
+(documentation SmartAirPurifier EnglishLanguage 
+"SmartAirPurifier is a type of AirPurifier that is designed to be controlled via a smartphone.")
 (subclass SmartAirPurifier AirPurifier)
 
 ;; 3. proposed smartSpeaker 
 (subclass SmartSpeaker SpeakerDevice)
+(documentation SmartSpeaker EnglishLanguage 
+"SmartSpeaker is a type of LoudSpeaker that is designed to  be controlled by voice.")
 (subclass SmartSpeaker SmartDevice)
 
 ;; 4. SmartTV proposed
