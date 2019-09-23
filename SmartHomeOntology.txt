@@ -141,6 +141,7 @@
 (subclass OpenCloseSensor Sensor)
 (subclass AirQualitySensor Sensor)
 (subclass DustSensor Sensor)
+;; brightness sensor? volume sensor?
 ;;===========================================================
 ;; Other Smart Devices
 
