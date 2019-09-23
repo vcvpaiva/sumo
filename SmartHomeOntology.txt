@@ -16,7 +16,7 @@
 ;; Merge.kif
 ;; Mid-level-ontology.kif,  
 ;; Media.kif
-;;  
+;; QoS.kif ? 
 
 ;; People using or referencing this work please cite the primary paper:
 ;; Niles, I., and Pease, A.  2001.  Towards a Standard Upper Ontology.  In 
