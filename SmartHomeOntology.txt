@@ -12,11 +12,11 @@
 ;; The goal is to deal with all the devices/capabilities in the OCF, Open Connectiviy Foundation
 ;; https://openconnectivity.org/developer/specifications starting from the SmartThings devices controlled via voice.
 ;; 
-;; Ontology dependencies for SmartThingsOntology.kif: 
+;; Ontology dependencies for SmartHomeOntology.kif: 
 ;; Merge.kif
 ;; Mid-level-ontology.kif,  
 ;; Media.kif
-;; QoS.kif ? 
+;; QoS.kif  
 
 ;; People using or referencing this work please cite the primary paper:
 ;; Niles, I., and Pease, A.  2001.  Towards a Standard Upper Ontology.  In 
@@ -51,13 +51,13 @@
 ;;	Multi-functional sensor
 ;;	Open and close sensor
 ;;	(smart) Outlet
-;;	Switch & Dimmer
+;;	Switch and Dimmer
 ;;	(smart) Thermostat
 ;;	(smart) Valve
 ;;	(smart) Vent
 
-;; A fuller list can be found in https://github.com/Samsung/SmartThings/blob/master/internal/rules/device_type_table.md (50)
-;; Devices already in SUMO are repeated here, but commented out.
+;; A fuller list can be found in https://github.com/Samsung/SmartThings/blob/master/internal/rules/device_type_table.md (50 devices)
+;; Devices that are already concepts in SUMO are repeated here, but commented out.
 
 ;;=============================
 ;; First  devices
