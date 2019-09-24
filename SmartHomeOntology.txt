@@ -198,11 +198,120 @@
 ;; By contrast OCF processes which are geared towards interconnectivity, seem much more restricted in numbers. 
 ;; Only 5: Create, Retrieve, Update, Delete, Notify.
 ;; https://openconnectivity.org/foundation/faq/smarthome-faq says:
-;; IoT Smart Home is an ecosystem made up of device-to-device or device-to-service interactions where-in devices generate information, share it and take actions based on the information. The devices and services essentially speak the same language and give and receive instructions. For example, a smart security system motion detector, when it senses movement could trigger the smart lighting to turn on the light in the room or thermostat to adjust the climate controls.device. 
+;; IoT Smart Home is an ecosystem made up of device-to-device or device-to-service interactions where-in devices generate information, share it and take actions based on the information. The devices and services essentially speak the same language and give and receive instructions. For example, a smart security system motion detector, 
+;; when it senses movement could trigger the smart lighting to turn on the light in the room or thermostat 
+;; to adjust the climate controls.device.
+
 ;; Smart home devices (e.g., laundry machines, thermostats and security systems) should be able to communicate with one another regardless of manufacturer, operating system, chipset or physical transport.  The OCF Smart Home Project is creating common data modeling for secure interoperability. The Project utilizes OCF technology to specify how Smart Home devices interoperate.
 ;; page 20 of the long doc (https://openconnectivity.org/specs/OCF_Core_Specification_v2.0.5.pdf) says:
 Conformant to  the  REST  architectural  style,  each  RESTful operation contains  all  the  information  necessary  to  understand the context of the interaction and is driven using a small set of generic operations , i.e., CREATE, RETRIEVE, UPDATE, DELETE and NOTIFY (CRUDN) defined in  clause 8, which include representations of Resources .
-;;Consumers want choice, and this requires smart home devices to be platform agnostic and communicate with one another regardless of manufacturer.
-
+;; Consumers want choice, and this requires smart home devices to be platform agnostic and communicate with one another regardless of manufacturer.
+;;========================
+;; SMARTTHINGS CAPABILITIES 
+;; first for the 7 device types:tv, family-hub, speaker, AC, purifier, vacuum-cleaner and lights
+;; from https://smartthings.developer.samsung.com/docs/api-ref/capabilities.html#Capabilities
  
+;; Ligths
+;;=========================
+;; 1. switch https://smartthings.developer.samsung.com/docs/api-ref/capabilities.html#Switch
+Attributes: switch
+A string representation of whether the switch is on or off
+*Type: *ENUM *Required: *Yes
+Possible values:
+off - The value of the switch attribute if the switch is off
+on - The value of the switch attribute if the switch is on
+Commands
+off()
+Turn a switch off
+on()
+Turn a switch on
+;; 2. switch level
+attributes: level
+A number that represents the current level, usually 0-100 in percent
+*Type: *NUMBER *Required: *Yes
+Commands
+setLevel(level, rate)
+Set the level to the given value. If the device supports being turned on and off then it will be turned on if level is greater than 0 and turned off if level is equal to 0.
+Arguments:
+level
+Type: NUMBER
+Required: Yes
+Description: The level value, usually 0-100 in percent
+rate
+Type: NUMBER
+Required: No
+Description: The rate at which to change the level
+    enumCommands:
+      - command: 'on'
+        value: 'on'
+      - command: 'off'
+        value: 'off'
+commands:
+  'off':
+    arguments: [
+      ]
+  'on':
+    arguments: [
+      ]
+public: true
+id: light
+version: 1
+;; 3. light (old capability, described as deprecated in https://docs.smartthings.com/en/latest/capabilities-reference.html#light)
+# reviewed 2018-01-11
+name: Light
+status: deprecated
+attributes:
+  switch:
+    schema:
+      type: object
+      properties:
+        value:
+          $ref: SwitchState
+      required: ["value"]
+    type: ENUM
+    values:
+      - 'off'
+      - 'on'
+;;4. actuator https://docs.smartthings.com/en/latest/capabilities-reference.html#actuator
+;; The Actuator capability is a “tagging” capability. It defines no attributes or commands. In SmartThings terms, it represents that a Device has commands.
+name: Actuator
+status: deprecated
+attributes: {
+  }
+commands: {
+  }
+public: true
+id: actuator
+version: 1
+;;5. configuration https://docs.smartthings.com/en/latest/capabilities-reference.html#configuration
+;;Allow configuration of devices that support it
+# reviewed 2018-02-20
+name: Configuration
+status: live
+attributes: {
+  }
+commands:
+  configure:
+    arguments: [
+      ]
+public: true
+id: configuration
+;; 6. refresh https://docs.smartthings.com/en/latest/capabilities-reference.html#refresh
+;;Allow the execution of the refresh command for devices that support it
+# reviewed 2018-2-13
+name: Refresh
+status: live
+attributes: {
+  }
+commands:
+  refresh:
+    arguments: [
+      ]
+public: true
+id: refresh
+version: 1
+;; 7. healthCheck ???
+;; CANNOT FIND!
+
+
 
