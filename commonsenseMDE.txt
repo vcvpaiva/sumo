@@ -1,0 +1,13 @@
+============================================================================
+;;                 Common sense for the SmartHome Ontology
+;; ============================================================================
+;; Created by: Valeria de Paiva (vdepaiva [at] gmail [dot] com)
+;; Created on: Dec 30, 2019
+;; ============================
+;; 
+;; Description:  This describes basic concepts of commonsese related to smart devices in a connected SmartHome.
+;; The SmartThings framework is described in
+;; https://smartthings.developer.samsung.com/docs/devices/working-with-bixby.html.
+;; The goal is to record as much as possible the  assumptions underlying the SmartThings reasoner and 
+;; the devices controlled via voice, using Bixby.
+;; 
